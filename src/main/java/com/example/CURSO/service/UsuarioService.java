@@ -14,5 +14,9 @@ public class UsuarioService {
     public List<UsuarioModel> listarUsuariosCadastrados(){
         return  usuarioRepository.findAll();
     }
+    public void excluirUsuarioPeloId(Long id){
+        return usuarioRepository.deleteById(id);
+    }
+
 
 }
