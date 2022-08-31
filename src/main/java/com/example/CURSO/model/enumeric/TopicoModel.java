@@ -2,6 +2,7 @@ package com.example.CURSO.model.enumeric;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Getter
+@NoArgsConstructor
 @Setter
 @Table(name = "topico")
 

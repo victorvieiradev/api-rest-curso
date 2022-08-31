@@ -13,20 +13,29 @@ public class TopicoService {
     @Autowired
     private TopicoRepository topicoRepository;
 
-    public List<TopicoModel> buscarOsTopicos(){
+    public List<TopicoModel> buscarOsTopicosTodos(){
         return topicoRepository.findAll();
 
     }
 
-    public Optional<TopicoModel> buscarTopicoEspecifico(Long idConta){
-        return topicoRepository.findById(idConta);
+    public Optional<TopicoModel> buscarTopicoEspecifico(Long codigo){
+        return topicoRepository.findById(codigo);
     }
 
     public TopicoModel cadastrarTopico (TopicoModel topicoModel){
-        topicoModel.getTitulo();
-        topicoModel.getMensagem();
-        topicoModel.getDataCriacao();
+        //topicoModel.getCodigo();
+        //topicoModel.getTitulo();
+        //topicoModel.getMensagem();
+        //topicoModel.getDataCriacao();
 
+        return topicoRepository.save(topicoModel);
+    }
+
+    public TopicoModel alterandoTopicoEspecifico(TopicoModel topicoModel) {
+        //topicoModel.getCodigo();
+        //topicoModel.getTitulo();
+        //topicoModel.getMensagem();
+        //topicoModel.getDataCriacao();
         return topicoRepository.save(topicoModel);
     }
 
