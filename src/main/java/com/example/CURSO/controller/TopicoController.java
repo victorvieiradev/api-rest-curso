@@ -18,18 +18,15 @@ public class TopicoController {
     public List<TopicoModel> buscarTodosOsTopicos(){
         return topicoService.buscarOsTopicosTodos();
     }
-
     @GetMapping(path = "/topico/{codigo}")
     public Optional<TopicoModel> buscarUmTopico(@PathVariable Long codigo){return topicoService.buscarTopicoEspecifico(codigo);
     }
-
     @PostMapping(path = "/topico")
     public TopicoModel cadastrarTopico(@RequestBody TopicoModel topicoCurso){return topicoService.cadastrarTopico(topicoCurso);
     }
-
     @PutMapping(path = "/topico/{codigo}")
-    public Optional<TopicoModel> buscarUmTopico(@RequestBody TopicoModel alterando){return null;} //topicoService;
-
+    public TopicoModel buscarUmTopico(@RequestBody TopicoModel topicoModel){
+        return topicoService.alterandoTopicoEspecifico(topicoModel);}
     @DeleteMapping(path = "/topico/{codigo}")
     public void deletandoTopico(@PathVariable Long codigo){topicoService.deletarTopico(codigo);
     }

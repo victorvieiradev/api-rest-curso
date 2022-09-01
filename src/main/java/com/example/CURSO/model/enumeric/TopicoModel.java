@@ -8,10 +8,10 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @Entity
 @Getter
-@NoArgsConstructor
+//@NoArgsConstructor
 @Setter
 @Table(name = "topico")
 
@@ -29,4 +29,22 @@ public class TopicoModel {
     @Column(length = 15, nullable = false)
     private LocalDate dataCriacao;
 
+    public TopicoModel(Long codigo, String titulo, String mensagem, LocalDate dataCriacao){
+        this.codigo=codigo;
+        this.titulo=titulo;
+        this.mensagem=mensagem;
+        this.dataCriacao=dataCriacao;
+
+        if(this.getDataCriacao()==null){
+            //LocalDate dataCriacao = LocalDate.now();
+            this.setDataCriacao(LocalDate.now());
+        }
+    }
+
+
 }
+
+
+
+
+

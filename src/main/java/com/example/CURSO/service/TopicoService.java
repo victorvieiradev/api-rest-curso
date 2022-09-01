@@ -1,10 +1,13 @@
 package com.example.CURSO.service;
 
+import com.example.CURSO.model.enumeric.Status;
 import com.example.CURSO.model.enumeric.TopicoModel;
+import com.example.CURSO.model.enumeric.enun.StatusTopico;
 import com.example.CURSO.repository.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,19 +26,11 @@ public class TopicoService {
     }
 
     public TopicoModel cadastrarTopico (TopicoModel topicoModel){
-        //topicoModel.getCodigo();
-        //topicoModel.getTitulo();
-        //topicoModel.getMensagem();
-        //topicoModel.getDataCriacao();
-
+       // respostaModel.setStatus(StatusTopico.NAO_RESPONDIDO);
         return topicoRepository.save(topicoModel);
     }
 
     public TopicoModel alterandoTopicoEspecifico(TopicoModel topicoModel) {
-        //topicoModel.getCodigo();
-        //topicoModel.getTitulo();
-        //topicoModel.getMensagem();
-        //topicoModel.getDataCriacao();
         return topicoRepository.save(topicoModel);
     }
 
