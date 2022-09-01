@@ -19,7 +19,7 @@ public class UsuarioService {
         return  usuarioRepository.findAll();
     }
     public void excluirUsuarioPeloId(Long id){
-        return usuarioRepository.deleteById(id);
+        usuarioRepository.deleteById(id);
     }
     public Optional<UsuarioModel> buscarPorId(Long id){
         return usuarioRepository.findById(id);
