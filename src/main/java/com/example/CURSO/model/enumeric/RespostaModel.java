@@ -1,8 +1,11 @@
 package com.example.CURSO.model.enumeric;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Data
 @Entity
 @Table(name = "resposta")
 public class RespostaModel {
@@ -21,6 +24,5 @@ public class RespostaModel {
     private boolean solucao = false;
 
     @Column(name = "status", length = 12)
-    @Enumerated(value =  EnumType.STRING)
-    private Status status;
+    private String status;
 }
