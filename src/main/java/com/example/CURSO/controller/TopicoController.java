@@ -20,23 +20,18 @@ public class TopicoController {
     }
 
     @GetMapping(path = "/topico/{codigo}")
-    public Optional<TopicoModel> buscarUmTopico(@PathVariable Long codigo){
-        return topicoService.buscarTopicoEspecifico(codigo);
+    public Optional<TopicoModel> buscarUmTopico(@PathVariable Long codigo){return topicoService.buscarTopicoEspecifico(codigo);
     }
 
     @PostMapping(path = "/topico")
-    public TopicoModel cadastrarTopico(@RequestBody TopicoModel topicoCurso){
-        return topicoService.cadastrarTopico(topicoCurso);
+    public TopicoModel cadastrarTopico(@RequestBody TopicoModel topicoCurso){return topicoService.cadastrarTopico(topicoCurso);
     }
 
     @PutMapping(path = "/topico/{codigo}")
-    public Optional<TopicoModel> buscarUmTopico(@RequestBody TopicoModel alterando){
-        return null; //topicoService;
-    }
+    public Optional<TopicoModel> buscarUmTopico(@RequestBody TopicoModel alterando){return null;} //topicoService;
 
     @DeleteMapping(path = "/topico/{codigo}")
-    public void deletandoTopico(@PathVariable Long codigo){
-        topicoService.deletarTopico(codigo);
+    public void deletandoTopico(@PathVariable Long codigo){topicoService.deletarTopico(codigo);
     }
 
 }

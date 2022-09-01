@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioFactory {
-    public UsuarioModel novoUsuario(DadosUsuariosModel dados ){
-        return  dados;
-    }
+//    public UsuarioModel novoUsuario(DadosUsuariosModel dados ){
+//        return dados;}
 }

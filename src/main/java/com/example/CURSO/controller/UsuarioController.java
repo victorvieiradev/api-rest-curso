@@ -14,9 +14,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
     @GetMapping(path = "/usuario")
-    public List<UsuarioModel> listarUsuariosCadastrados(){
-        return usuarioService.listarUsuariosCadastrados()
-    }
+    public List<UsuarioModel> listarUsuariosCadastrados(){return usuarioService.listarUsuariosCadastrados();}
     @GetMapping(path = "/usuario/{id}")
     public Optional<UsuarioModel> buscarUsuarioPorId(@PathVariable Long id){
         return usuarioService.buscarPorId(id);
