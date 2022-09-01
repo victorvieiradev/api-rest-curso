@@ -1,6 +1,7 @@
 package com.example.CURSO.service;
 
-import com.example.CURSO.model.enumeric.Status;
+//import com.example.CURSO.model.enumeric.Status;
+import com.example.CURSO.model.enumeric.RespostaModel;
 import com.example.CURSO.model.enumeric.TopicoModel;
 import com.example.CURSO.model.enumeric.enun.StatusTopico;
 import com.example.CURSO.repository.TopicoRepository;
@@ -25,8 +26,8 @@ public class TopicoService {
         return topicoRepository.findById(codigo);
     }
 
-    public TopicoModel cadastrarTopico (TopicoModel topicoModel){
-       // respostaModel.setStatus(StatusTopico.NAO_RESPONDIDO);
+    public TopicoModel cadastrarTopico (TopicoModel topicoModel, RespostaModel respostaModel){
+        //respostaModel.setStatus(Status.NAO_RESPONDIDO);
         return topicoRepository.save(topicoModel);
     }
 

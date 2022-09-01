@@ -1,5 +1,6 @@
 package com.example.CURSO.controller;
 
+import com.example.CURSO.model.enumeric.RespostaModel;
 import com.example.CURSO.model.enumeric.TopicoModel;
 import com.example.CURSO.service.TopicoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class TopicoController {
     public Optional<TopicoModel> buscarUmTopico(@PathVariable Long codigo){return topicoService.buscarTopicoEspecifico(codigo);
     }
     @PostMapping(path = "/topico")
-    public TopicoModel cadastrarTopico(@RequestBody TopicoModel topicoCurso){return topicoService.cadastrarTopico(topicoCurso);
+    public TopicoModel cadastrarTopico(@RequestBody TopicoModel topicoCurso, RespostaModel respostaModel){return topicoService.cadastrarTopico(topicoCurso,respostaModel);
     }
     @PutMapping(path = "/topico/{codigo}")
     public TopicoModel buscarUmTopico(@RequestBody TopicoModel topicoModel){
