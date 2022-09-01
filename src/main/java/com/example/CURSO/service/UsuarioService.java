@@ -1,6 +1,7 @@
 package com.example.CURSO.service;
 
 import com.example.CURSO.model.enumeric.DadosUsuariosModel;
+import com.example.CURSO.model.enumeric.ExibirUsuario;
 import com.example.CURSO.model.enumeric.UsuarioModel;
 import com.example.CURSO.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,10 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
     @Autowired
     private UsuarioFactory usuarioFactory;
-    public List<UsuarioModel> listarUsuariosCadastrados(){
-        return  usuarioRepository.findAll();
+
+    public List<ExibirUsuario> listarUsuariosCadastrados(){
+        List<UsuarioModel> usuario = usuarioRepository.findAll();
+        return ExibirUsuario.converter(usuario);
     }
     public void excluirUsuarioPeloId(Long id){
         usuarioRepository.deleteById(id);
